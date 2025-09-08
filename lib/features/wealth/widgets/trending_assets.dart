@@ -45,10 +45,11 @@ class TrendingAssets extends StatelessWidget {
           const SizedBox(height: AppConstants.paddingM),
           
           SizedBox(
-            height: 120,
+            height: 140,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: trendingAssets.length,
+              physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 final asset = trendingAssets[index];
                 return _buildTrendingAssetCard(context, asset);
@@ -62,7 +63,7 @@ class TrendingAssets extends StatelessWidget {
 
   Widget _buildTrendingAssetCard(BuildContext context, TrendingAsset asset) {
     return Container(
-      width: 140,
+      width: 150,
       margin: const EdgeInsets.only(right: AppConstants.paddingM),
       padding: const EdgeInsets.all(AppConstants.paddingM),
       decoration: BoxDecoration(
@@ -77,7 +78,8 @@ class TrendingAssets extends StatelessWidget {
           width: 1,
         ),
       ),
-      child: Column(
+      child: LayoutBuilder(
+        builder: (context, constraints) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
@@ -116,7 +118,7 @@ class TrendingAssets extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          const Spacer(),
+          const SizedBox(height: AppConstants.paddingS),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -137,6 +139,7 @@ class TrendingAssets extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 

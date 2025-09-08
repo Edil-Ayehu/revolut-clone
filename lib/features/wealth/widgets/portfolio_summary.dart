@@ -146,7 +146,7 @@ class PortfolioSummary extends StatelessWidget {
     Color color,
   ) {
     return Container(
-      padding: const EdgeInsets.all(AppConstants.paddingM),
+      padding: const EdgeInsets.symmetric(vertical:AppConstants.paddingM, horizontal: 8),
       decoration: BoxDecoration(
         color: AppColors.textOnPrimary.withOpacity(0.1),
         borderRadius: BorderRadius.circular(AppConstants.radiusM),
@@ -164,7 +164,7 @@ class PortfolioSummary extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
               ),
-              const SizedBox(width: AppConstants.paddingS),
+              const SizedBox(width: 4),
               Text(
                 category,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(

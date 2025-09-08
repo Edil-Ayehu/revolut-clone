@@ -79,7 +79,7 @@ class InvestmentCategories extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(AppConstants.paddingL),
+        padding: const EdgeInsets.symmetric(horizontal:AppConstants.paddingL, vertical: 12),
         decoration: BoxDecoration(
           color: AppColors.surface,
           borderRadius: BorderRadius.circular(AppConstants.radiusL),
@@ -107,7 +107,7 @@ class InvestmentCategories extends StatelessWidget {
                 size: AppConstants.iconM,
               ),
             ),
-            const SizedBox(height: AppConstants.paddingM),
+            const SizedBox(height: AppConstants.paddingM - 4),
             Text(
               title,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(

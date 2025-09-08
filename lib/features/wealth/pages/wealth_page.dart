@@ -7,6 +7,7 @@ import '../widgets/portfolio_summary.dart';
 import '../widgets/investment_categories.dart';
 import '../widgets/trending_assets.dart';
 import '../widgets/market_news.dart';
+import 'package:flutter/material.dart' show kBottomNavigationBarHeight;
 
 class WealthPage extends StatefulWidget {
   const WealthPage({super.key});
@@ -83,6 +84,7 @@ class _WealthPageState extends State<WealthPage> with TickerProviderStateMixin {
         await Future.delayed(const Duration(seconds: 1));
       },
       child: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
         padding: const EdgeInsets.all(AppConstants.paddingM),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,6 +103,9 @@ class _WealthPageState extends State<WealthPage> with TickerProviderStateMixin {
             
             // Quick Actions
             _buildQuickActions(context),
+            
+            // Add bottom padding to prevent content from being cut off
+            const SizedBox(height: kBottomNavigationBarHeight),
           ],
         ),
       ),
@@ -123,6 +128,9 @@ class _WealthPageState extends State<WealthPage> with TickerProviderStateMixin {
           
           // My Holdings
           _buildMyHoldings('Stocks'),
+          
+          // Add bottom padding to prevent content from being cut off
+          const SizedBox(height: kBottomNavigationBarHeight),
         ],
       ),
     );
@@ -144,6 +152,9 @@ class _WealthPageState extends State<WealthPage> with TickerProviderStateMixin {
           
           // My Holdings
           _buildMyHoldings('Crypto'),
+          
+          // Add bottom padding to prevent content from being cut off
+          const SizedBox(height: kBottomNavigationBarHeight),
         ],
       ),
     );
@@ -152,7 +163,13 @@ class _WealthPageState extends State<WealthPage> with TickerProviderStateMixin {
   Widget _buildNewsTab() {
     return const SingleChildScrollView(
       padding: EdgeInsets.all(AppConstants.paddingM),
-      child: MarketNews(),
+      child: Column(
+        children: [
+          MarketNews(),
+          // Add bottom padding to prevent content from being cut off
+          SizedBox(height: kBottomNavigationBarHeight),
+        ],
+      ),
     );
   }
 
@@ -360,9 +377,9 @@ class _WealthPageState extends State<WealthPage> with TickerProviderStateMixin {
           const SizedBox(height: AppConstants.paddingM),
           
           _buildStockItem('AAPL', 'Apple Inc.', '\$175.43', '+2.1%', true),
-          const Divider(),
+          Divider(color: Colors.grey.shade300),
           _buildStockItem('GOOGL', 'Alphabet Inc.', '\$2,847.63', '+1.8%', true),
-          const Divider(),
+          Divider(color: Colors.grey.shade300),
           _buildStockItem('MSFT', 'Microsoft Corp.', '\$378.85', '-0.5%', false),
         ],
       ),
@@ -447,9 +464,9 @@ class _WealthPageState extends State<WealthPage> with TickerProviderStateMixin {
           const SizedBox(height: AppConstants.paddingM),
           
           _buildStockItem('BTC', 'Bitcoin', '\$43,567.89', '+4.2%', true),
-          const Divider(),
+          Divider(color: Colors.grey.shade300),
           _buildStockItem('ETH', 'Ethereum', '\$2,634.51', '+3.8%', true),
-          const Divider(),
+          Divider(color: Colors.grey.shade300),
           _buildStockItem('ADA', 'Cardano', '\$0.52', '-1.2%', false),
         ],
       ),
