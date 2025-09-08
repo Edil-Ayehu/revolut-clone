@@ -13,6 +13,9 @@ import '../features/cards/pages/cards_page.dart';
 import '../features/cards/pages/card_details_page.dart';
 import '../features/payments/pages/payments_page.dart';
 import '../features/payments/pages/send_money_page.dart';
+import '../features/payments/pages/exchange_currency_page.dart';
+import '../features/payments/pages/add_money_page.dart';
+import '../features/payments/pages/transaction_details_page.dart';
 import '../features/wealth/pages/wealth_page.dart';
 import '../features/wealth/pages/stocks_page.dart';
 import '../features/profile/pages/profile_page.dart';
@@ -84,6 +87,23 @@ class AppRouter {
                 path: '/send',
                 name: 'send-money',
                 builder: (context, state) => const SendMoneyPage(),
+              ),
+              GoRoute(
+                path: '/exchange',
+                name: 'exchange-currency',
+                builder: (context, state) => const ExchangeCurrencyPage(),
+              ),
+              GoRoute(
+                path: 'add-money',
+                name: 'add-money',
+                builder: (context, state) => const AddMoneyPage(),
+              ),
+              GoRoute(
+                path: 'transaction/:id',
+                name: 'transaction-details',
+                builder: (context, state) => TransactionDetailsPage(
+                  transactionId: state.pathParameters['id'] ?? '',
+                ),
               ),
             ],
           ),

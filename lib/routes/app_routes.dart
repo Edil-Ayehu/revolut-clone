@@ -22,6 +22,7 @@ class AppRoutes {
   static const String payments = '/payments';
   static const String sendMoney = '/send-money';
   static const String requestMoney = '/request-money';
+  static const String addMoney = '/add-money';
   static const String paymentConfirmation = '/payment-confirmation';
   static const String paymentHistory = '/payment-history';
   static const String contacts = '/contacts';

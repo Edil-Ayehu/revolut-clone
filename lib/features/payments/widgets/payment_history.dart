@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../shared/models/transaction.dart';
+import '../../../routes/app_routes.dart';
 
 class PaymentHistory extends StatelessWidget {
   const PaymentHistory({super.key});
@@ -142,7 +144,7 @@ class PaymentHistory extends StatelessWidget {
         ),
       ),
       onTap: () {
-        // TODO: Navigate to transaction details
+        context.go('${AppRoutes.payments}/transaction/${transaction.id}');
       },
     );
   }

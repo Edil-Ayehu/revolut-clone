@@ -67,6 +67,17 @@ class PaymentActions extends StatelessWidget {
               Expanded(
                 child: _buildActionCard(
                   context,
+                  'Exchange',
+                  'Convert currencies',
+                  Icons.currency_exchange,
+                  AppColors.info,
+                  () => context.push('${AppRoutes.payments}/exchange'),
+                ),
+              ),
+              const SizedBox(width: AppConstants.paddingM),
+              Expanded(
+                child: _buildActionCard(
+                  context,
                   'Scan QR',
                   'Pay with QR code',
                   Icons.qr_code_scanner,
@@ -76,7 +87,13 @@ class PaymentActions extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(width: AppConstants.paddingM),
+            ],
+          ),
+          const SizedBox(height: AppConstants.paddingM),
+          
+          // Tertiary Actions
+          Row(
+            children: [
               Expanded(
                 child: _buildActionCard(
                   context,
@@ -87,6 +104,17 @@ class PaymentActions extends StatelessWidget {
                   () {
                     // TODO: Implement NFC payment
                   },
+                ),
+              ),
+              const SizedBox(width: AppConstants.paddingM),
+              Expanded(
+                child: _buildActionCard(
+                  context,
+                  'Add Money',
+                  'Deposit funds',
+                  Icons.add_circle_outline,
+                  AppColors.success,
+                  () => context.push(AppRoutes.addMoney),
                 ),
               ),
             ],
