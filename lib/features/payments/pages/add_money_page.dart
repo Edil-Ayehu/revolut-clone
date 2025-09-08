@@ -159,7 +159,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                     Container(
                       padding: const EdgeInsets.all(AppConstants.paddingM),
                       decoration: BoxDecoration(
-                        color: AppColors.cryptoColor,
+                        color: AppColors.info.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(AppConstants.radiusM),
                       ),
                       child: Row(
@@ -323,7 +323,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
           vertical: AppConstants.paddingS,
         ),
         decoration: BoxDecoration(
-          color: AppColors.cryptoColor,
+          color: AppColors.info.withValues(alpha: 0.2),
           borderRadius: BorderRadius.circular(AppConstants.radiusM),
         ),
         child: Text(
@@ -375,7 +375,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
               width: 48,
               height: 48,
               decoration: BoxDecoration(
-                color: isSelected ? AppColors.primary : AppColors.cryptoColor,
+                color: isSelected ? AppColors.primary : AppColors.primary.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(AppConstants.radiusM),
               ),
               child: Icon(

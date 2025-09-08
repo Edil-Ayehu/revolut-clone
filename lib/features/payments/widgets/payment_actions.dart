@@ -114,7 +114,7 @@ class PaymentActions extends StatelessWidget {
                   'Deposit funds',
                   Icons.add_circle_outline,
                   AppColors.success,
-                  () => context.push(AppRoutes.addMoney),
+                  () => context.push('${AppRoutes.payments}/add-money'),
                 ),
               ),
             ],
