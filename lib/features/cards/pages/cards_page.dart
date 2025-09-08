@@ -43,10 +43,13 @@ class _CardsPageState extends State<CardsPage> {
         ],
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            // Cards Carousel
-            if (cards.isNotEmpty) ...[
+        bottom: false,
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: Column(
+            children: [
+              // Cards Carousel
+              if (cards.isNotEmpty) ...[
               SizedBox(
                 height: 220,
                 child: PageView.builder(
@@ -147,7 +150,7 @@ class _CardsPageState extends State<CardsPage> {
                 ),
               ),
             
-            const Spacer(),
+            const SizedBox(height: AppConstants.paddingL),
             
             // Add Card Button
             Padding(
@@ -160,7 +163,10 @@ class _CardsPageState extends State<CardsPage> {
                 },
               ),
             ),
+            // Add bottom padding to prevent content from being cut off
+            const SizedBox(height: kBottomNavigationBarHeight),
           ],
+          ),
         ),
       ),
     );

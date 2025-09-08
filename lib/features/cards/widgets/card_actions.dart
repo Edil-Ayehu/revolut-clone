@@ -110,7 +110,7 @@ class CardActions extends StatelessWidget {
                 subtitle: 'Order a replacement card',
                 onTap: onReplace,
               ),
-              const Divider(),
+              Divider(color: Colors.grey.shade200),
               _buildListAction(
                 context,
                 icon: Icons.block,

@@ -49,8 +49,9 @@ class PaymentHistory extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: transactions.length,
-            separatorBuilder: (context, index) => const Divider(
+            separatorBuilder: (context, index) => Divider(
               height: 1,
+              color: Colors.grey.shade200,
               indent: AppConstants.paddingXL,
             ),
             itemBuilder: (context, index) {
